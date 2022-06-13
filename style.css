@@ -1,0 +1,158 @@
+:root {
+  --color: hsl(217, 19%, 35%);
+  --second-coloer: hsl(214, 17%, 51%);
+  --gr-color: hsl(212, 23%, 69%);
+  --light-color: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 13px;
+  background-color: var(--light-color);
+}
+
+.container {
+  max-width: 800px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 15px;
+
+  perspective: 1px;
+}
+
+.container img {
+  width: 300px;
+
+  overflow: hidden;
+}
+
+.card {
+  font-family: inherit;
+  padding: 15px 20px;
+  width: 500px;
+  height: 100%;
+  background-color: white;
+}
+
+.card-title {
+  margin: 15px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--color);
+}
+
+.card p {
+  color: var(--gr-color);
+  font-weight: 500;
+}
+
+.container .card-profile {
+  padding-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .card .card-profile img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.card-profile span,
+p {
+  padding: 0 10px;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+}
+
+#btn {
+  display: block;
+  border: 0;
+  padding: 0.5em;
+  background-color: var(--light-grayish-blue);
+  border-radius: 150px;
+  cursor: pointer;
+  position: relative;
+}
+
+#btn img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.social {
+  background-color: var(--color);
+  display: flex;
+  width: 200px;
+  position: absolute;
+  right: -49px;
+  top: 155px;
+
+  justify-content: space-around;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.social.hide {
+  display: none;
+}
+
+.social div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--second-coloer);
+}
+
+.social img {
+  background-color: var(--color);
+  color: var(--color);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.social::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--color) transparent transparent;
+}
+
+@media (max-width: 676px) {
+  .container {
+    width: 80%px;
+  }
+  .container img {
+    width: 100%;
+  }
+  .card {
+    width: 80%;
+  }
+}
